@@ -1,0 +1,29 @@
+{
+  "name": "moviestore-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NYLawal/moviestore-app.git"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NYLawal/moviestore-app/issues"
+  },
+  "homepage": "https://github.com/NYLawal/moviestore-app#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "joi": "^17.9.2",
+    "joi-objectid": "^4.0.2",
+    "mongoose": "^7.1.1",
+    "morgan": "^1.10.0"
+  }
+}
