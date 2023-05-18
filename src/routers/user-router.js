@@ -7,7 +7,7 @@ const router = Router()
 router.post("/create", tryCatchHandler( UserController.createUser) )
 router.get("/", tryCatchHandler( UserController.findUser) )
 router.get("/all", tryCatchHandler( UserController.findAllUsers) )
-router.post("/login", tryCatchHandler( UserController.loginUSer) )
+router.post("/login", tryCatchHandler( UserController.loginUser) )
 
 
 export { router }

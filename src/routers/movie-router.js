@@ -1,19 +1,22 @@
 import {Router} from "express"
 import MovieController from "../controllers/movie-controller.js"
 import { tryCatchHandler } from "../utils/try-catch-handler.js"
+import {userAuthMiddleWare} from "../middlewares/auth-middleware.js"
 
 const router = Router()
 
-router.post("/create",  tryCatchHandler( MovieController.createMovie))
+router.post("/create", userAuthMiddleWare, tryCatchHandler( MovieController.createMovie))
 
-router.put("/update", tryCatchHandler( MovieController.updateMovie))
+router.put("/update", userAuthMiddleWare, tryCatchHandler( MovieController.updateMovie))
 
-router.get("/one", tryCatchHandler( MovieController.getOneMovie))
+router.get("/one", userAuthMiddleWare, tryCatchHandler( MovieController.getOneMovie))
 
-router.get("/allby", tryCatchHandler( MovieController.getMoviesByField))
+router.get("/allbyfield", userAuthMiddleWare, tryCatchHandler( MovieController.findMoviesByField))
 
-router.get("/all", tryCatchHandler( MovieController.getAllMovies))
+router.get("/allbyuser", userAuthMiddleWare, tryCatchHandler( MovieController.findMoviesByUser))
 
-router.delete("/delete", tryCatchHandler( MovieController.deleteAMovie))
+router.get("/all", userAuthMiddleWare, tryCatchHandler( MovieController.getAllMovies))
+
+router.delete("/delete", userAuthMiddleWare, tryCatchHandler( MovieController.deleteAMovie))
 
 export {router}

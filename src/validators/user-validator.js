@@ -15,3 +15,10 @@ export const createUserValidator = Joi.object({
   firstName: Joi.string().optional(),
   lastName: Joi.string().optional(),
 }).strict()
+
+
+export const loginUserValidator = Joi.object({
+  username:Joi.string().optional(),
+  email:Joi.string().optional(),
+  password: Joi.string().required()
+}).strict()
