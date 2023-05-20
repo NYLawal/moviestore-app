@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "start-dev": "set NODE_ENV=development && nodemon app.js",
+    "start-prod": "set NODE_ENV=production && nodemon app.js"
   },
   "repository": {
     "type": "git",

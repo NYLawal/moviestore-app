@@ -1,17 +1,16 @@
 import express  from "express";
-import dotenv  from "dotenv";
 import mongoose from "mongoose";
 import morgan from "morgan";
 import {globalErrorHandler} from "./src/utils/errorHandler.js"
+import {config} from "./src/config/index.js"
 
 // Importing Routes
 import {router as userRouter} from "./src/routers/user-router.js"
 import {router as movieRouter} from "./src/routers/movie-router.js"
 
 const app = express()
-dotenv.config()
-mongoose.connect(process.env.MONGODB_CONNECTION_URL).then(()=> console.log("Database connection established")).catch(e=> console.log(e.message))
-const port = Number(process.env.PORT) || 4000;
+mongoose.connect(config.mongodb_connection_url).then(()=> console.log("Database connection established")).catch(e=> console.log(e.message))
+const port = Number(config.port) || 4000;
 
 // Defining Middlewares
 app.use(morgan('tiny'))
