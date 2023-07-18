@@ -1,2 +1,2 @@
 # moviestore-app
-A node.js api building, hands-on project, where I learnt validation, authorization and authentication. 
+A node.js api project where information about movies can be stored and retrieved. 
